@@ -13,7 +13,7 @@ xmlns:tools="http://schemas.android.com/tools">
     android:requestLegacyExternalStorage="true"
     android:theme="@style/Theme.PeachMusicPlayer"
     tools:targetApi="34">
-    <activity android:name=".MusicPlayerActivity"> </activity>
+
     <activity android:name=".MainActivity"
     android:exported="true">
         <intent-filter>
@@ -22,6 +22,7 @@ xmlns:tools="http://schemas.android.com/tools">
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
+    <activity android:name=".MusicPlayerActivity"> </activity>
 </application>
 
 <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"

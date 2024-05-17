@@ -16,9 +16,9 @@ import java.util.concurrent.TimeUnit;
 
 public class MusicPlayerActivity extends AppCompatActivity {
 
-    TextView titleTv,currentTimeTv,totalTimeTv;
+    TextView titleTv, currentTimeTv, totalTimeTv;
     SeekBar seekBar;
-    ImageView pausePlay,nextBtn,previousBtn;
+    ImageView pausePlay, nextBtn, previousBtn, playListBtn;
     ArrayList<AudioModel> songsList;
     AudioModel currentSong;
     MediaPlayer mediaPlayer = MyMediaPlayer.getInstance();
@@ -35,6 +35,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
         pausePlay = findViewById(R.id.pause_play);
         nextBtn = findViewById(R.id.next);
         previousBtn = findViewById(R.id.previous);
+        playListBtn = findViewById(R.id.play_list);
 
         titleTv.setSelected(true);
 
@@ -90,6 +91,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
         pausePlay.setOnClickListener(v-> pausePlay());
         nextBtn.setOnClickListener(v-> playNextSong());
         previousBtn.setOnClickListener(v-> playPreviousSong());
+        playListBtn.setOnClickListener(v-> goPlayList());
 
         playMusic();
     }
@@ -133,6 +135,11 @@ public class MusicPlayerActivity extends AppCompatActivity {
         else
             mediaPlayer.start();
     }
+    // Нажатие кнопки Play_list
+    private void goPlayList(){
+        super.onBackPressed();
+    }
+
 
     // Перевод размера песни в минуты:секунды
     @SuppressLint("DefaultLocale")
